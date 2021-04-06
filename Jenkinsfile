@@ -1,4 +1,4 @@
-node {
+node('gradle') {
     stage('checkout') {
         checkout([$class: 'GitSCM',
         branches: [[name: '*/master']],
