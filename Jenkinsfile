@@ -1,10 +1,10 @@
-@Library('jenkins-sample-lib')_
-
 node('gradle') {
     stage('checkout') {
-        gitCheckout(
-        branch: "main",
-        url: "https://github.com/terekhovav88/docker_build.git"
+        checkout([$class: 'GitSCM',
+        branches: [[name: '*/master']],
+        extensions: [],
+        userRemoteConfigs: [[credentialsId: 'f8413abe-394d-4162-98d5-842a7e37942d',
+        url: 'https://github.com/terekhovav88/docker_build.git']]])
     )
    }
     stage('build') {
