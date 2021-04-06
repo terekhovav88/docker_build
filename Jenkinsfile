@@ -1,5 +1,3 @@
-@Library('jenkins-sample-lib')_
-
 node('gradle') {
     stage('checkout') {
         checkout([$class: 'GitSCM',
