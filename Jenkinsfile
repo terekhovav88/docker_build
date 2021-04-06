@@ -7,4 +7,5 @@ node('gradle') {
    }
     stage('build') {
         docker.build('docker_test')
+        }
  }
