@@ -8,4 +8,8 @@ node('gradle') {
     stage('build') {
         docker.build('docker_test')
         }
+    stage('push') {
+        docker.withRegistry(url: 'https://hub.docker.com/repository/docker/atinho/docker-test') {
+        dockerImage.push("docker_test:latest")
+        }
  }
