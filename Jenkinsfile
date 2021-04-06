@@ -6,11 +6,12 @@ node('gradle') {
         userRemoteConfigs: [[credentialsId: 'f8413abe-394d-4162-98d5-842a7e37942d', url: 'https://github.com/terekhovav88/docker_build.git']]])
    }
     stage('build') {
-        def image = docker.build('docker_test')
+        def app = docker.build('docker_test')
         }
     stage('push') {
         docker.withRegistry(url: 'https://hub.docker.com/repository/docker/atinho/docker-test') {
-        image.push("docker_test:latest")
+        app.push("${env.BUILD_NUMBER}")
+        app.push("latest")
           }
       }
  }
