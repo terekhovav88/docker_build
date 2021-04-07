@@ -13,7 +13,7 @@ node('gradle') {
 
     stage('push') {
         docker.withRegistry('https://registry.hub.docker.com', 'atinho') {
-        dockerImage.push()
+        dockerImage.push('docker_test', 'latest')
           }
       }
  }
