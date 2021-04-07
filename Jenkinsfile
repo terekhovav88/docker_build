@@ -8,12 +8,10 @@ node('gradle') {
 
     stage('build') {
         dockerImage = docker.build('docker_test')
-
     }
 
     stage('push') {
         docker.withRegistry('https://registry.hub.docker.com', 'atinho') {
-        dockerImage.tag('latest')
         dockerImage.push()
           }
       }
