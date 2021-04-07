@@ -7,7 +7,7 @@ node('gradle') {
    }
 
     stage('build') {
-        dockerImage = docker.build('new/docker_test')
+        dockerImage = docker.build('docker_test')
 
     }
 
