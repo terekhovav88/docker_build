@@ -7,7 +7,8 @@ node('gradle') {
    }
 
     stage('build') {
-        dockerImage = docker.build registry + ":$BUILD_NUMBER"
+        dockerImage = docker.build('docker_test')
+
     }
 
     stage('push') {
