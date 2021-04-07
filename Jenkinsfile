@@ -7,14 +7,14 @@ node('gradle') {
    }
 
     stage('build') {
-        dockerImage = docker.build('docker_test')
+        dockerImage = docker.build('new/docker_test')
 
     }
 
     stage('push') {
         docker.withRegistry('https://registry.hub.docker.com', 'atinho') {
-        dockerImage.tag('docker_test:latest')
-        dockerImage.push('docker_test:latest')
+        dockerImage.tag('new/docker_test:latest')
+        dockerImage.push('new/docker_test:latest')
           }
       }
  }
