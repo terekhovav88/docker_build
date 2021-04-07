@@ -8,7 +8,7 @@ node('gradle') {
 
     stage('build') {
     docker.withRegistry('https://registry.hub.docker.com', 'atinho') {
-        dockerImage = docker.build('docker-test')
+        dockerImage = docker.build('atinho/docker-test')
         }
     }
 
