@@ -11,7 +11,7 @@ node('gradle') {
     }
 
     stage('push') {
-        docker.withRegistry('atinho/docker-test', 'atinho') {
+        docker.withRegistry('https://registry.hub.docker.com', 'atinho') {
         app.push("${env.BUILD_NUMBER}")
         app.push("latest")
           }
