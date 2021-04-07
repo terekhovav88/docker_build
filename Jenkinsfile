@@ -7,8 +7,8 @@ node('gradle') {
    }
 
     stage('build') {
-    docker.withRegistry('http://192.168.1.144:8081/', 'Nexus-docker') {
-        dockerImage = docker.build('docker_test')
+    docker.withRegistry('https://registry.hub.docker.com', 'atinho') {
+        dockerImage = docker.build('docker-test')
         }
     }
 
