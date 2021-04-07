@@ -7,12 +7,12 @@ node('gradle') {
    }
 
     stage('build') {
-        docker.build('docker_test')
+        dockerImage = docker.build registry + ":$BUILD_NUMBER"
     }
 
     stage('push') {
         docker.withRegistry('https://registry.hub.docker.com', 'atinho') {
-        docker.push('docker_test')
+        dockerImage.push()
           }
       }
  }
