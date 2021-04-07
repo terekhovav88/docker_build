@@ -13,6 +13,6 @@ node('gradle') {
     }
 
     stage('push') {
-        dockerImage.push('registry.hub.docker.com/docker_test:latest')
+        dockerImage.push('docker_test:latest')
       }
  }
