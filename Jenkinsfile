@@ -13,6 +13,6 @@ node('gradle') {
     }
 
     stage('push') {
-        dockerImage.push('docker_test:latest')
+        dockerImage.push('latest')
       }
  }
